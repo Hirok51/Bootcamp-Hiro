@@ -1,10 +1,8 @@
-<!DOCTYPE html>
+
 <html>
   <head>
     <title>Splurty</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -39,6 +37,7 @@
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
+        
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -46,24 +45,29 @@
             </button>
             <h4 class="modal-title" id="myModalLabel">Contribute Your Quote</h4>
           </div>
+          
           <%= simple_form_for Quote.new do |f| %>
+            
             <div class="modal-body">
               <%= f.input :saying, label: "What is the saying you want to add?", placeholder: "Fear is the disease. Hustle is the antidote." %>
               <br />
               <%= f.input :author, label: "Who is the author of the quote?", placeholder: "Travis Kalanick" %>
             </div>
+          
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <%= f.submit 'Create', class: 'btn btn-danger' %>
           </div>
+        
         <% end %>
        </div>
+      
       </div>
     </div>
 
 
 
-    <hr />
+  <hr />
 
     <br class="clear" />
 
@@ -88,8 +92,10 @@
             Proudly hacked by <a href="https://hirokaieda.netlify.com/">Toyohiro Kaieda</a><br />
             Want to build your own Splurty Web Ap - <a href="https://online.bootcampspot.com">Learn how to code here</a>
           <p class="text-muted">Place sticky fooer content here.</p>
+          </div>
         </div>
       </div>
     </div>
+
   </body>
 </html>
